@@ -1,4 +1,3 @@
-// Dados dos produtos conforme fornecido no exercício
 export const products = [
   {
     id: 123,
