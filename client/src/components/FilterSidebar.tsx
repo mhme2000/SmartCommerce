@@ -61,7 +61,7 @@ export const FilterSidebar: React.FC = () => {
         <CardTitle>Filtros</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        {/* Category Filter */}
+        
         <div>
           <h4 className="font-medium text-slate-700 mb-3">Categoria</h4>
           <div className="space-y-2">
@@ -80,7 +80,7 @@ export const FilterSidebar: React.FC = () => {
           </div>
         </div>
 
-        {/* Price Filter */}
+        
         <div>
           <h4 className="font-medium text-slate-700 mb-3">Faixa de Preço</h4>
           <RadioGroup value={getCurrentPriceRange()} onValueChange={handlePriceRangeChange}>
@@ -107,7 +107,7 @@ export const FilterSidebar: React.FC = () => {
           </RadioGroup>
         </div>
 
-        {/* Brand Filter */}
+        
         <div>
           <h4 className="font-medium text-slate-700 mb-3">Marca</h4>
           <div className="space-y-2">

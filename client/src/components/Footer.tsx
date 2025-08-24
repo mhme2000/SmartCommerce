@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
     <footer className="bg-slate-800 text-white mt-12">
       <div className="container mx-auto px-4 py-8">
         <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand */}
+          
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Smartphone className="h-6 w-6 text-primary" />
@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Customer Service */}
+          
           <div>
             <h4 className="font-semibold mb-4">Atendimento</h4>
             <div className="space-y-2 text-sm text-slate-300">
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Links */}
+          
           <div>
             <h4 className="font-semibold mb-4">Links Úteis</h4>
             <div className="space-y-2 text-sm text-slate-300">
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Social Media */}
+          
           <div>
             <h4 className="font-semibold mb-4">Redes Sociais</h4>
             <div className="flex space-x-4">

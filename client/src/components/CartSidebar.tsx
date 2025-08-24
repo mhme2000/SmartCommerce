@@ -40,7 +40,7 @@ export const CartSidebar: React.FC = () => {
         </SheetHeader>
 
         <div className="flex flex-col h-full">
-          {/* Cart Items */}
+          
           <div className="flex-1 overflow-y-auto py-4">
             {state.items.length === 0 ? (
               <div className="text-center py-8">
@@ -101,7 +101,7 @@ export const CartSidebar: React.FC = () => {
             )}
           </div>
 
-          {/* Cart Footer */}
+          
           {state.items.length > 0 && (
             <div className="border-t pt-4 bg-slate-50 -mx-6 px-6 pb-6">
               <div className="space-y-2 mb-4">

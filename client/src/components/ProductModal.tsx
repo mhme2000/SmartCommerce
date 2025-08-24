@@ -64,7 +64,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onC
         </DialogHeader>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Product Images */}
+          
           <div className="space-y-4">
             <img
               src={product.pictureUrl}
@@ -76,7 +76,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onC
             />
           </div>
 
-          {/* Product Details */}
+          
           <div>
             <div className="mb-4">
               {product.name.toLowerCase().includes('5g') && (
@@ -110,7 +110,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onC
               </p>
             </div>
 
-            {/* Features */}
+            
             {getFeatures().length > 0 && (
               <div className="mb-6">
                 <h3 className="font-semibold mb-2">Características Principais:</h3>
@@ -122,7 +122,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onC
               </div>
             )}
 
-            {/* Quantity */}
+            
             <div className="mb-6">
               <label className="block text-sm font-medium mb-2">Quantidade:</label>
               <div className="flex items-center gap-3">
@@ -147,7 +147,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onC
               </div>
             </div>
 
-            {/* Action Buttons */}
+            
             <div className="space-y-3">
               <Button onClick={handleAddToCart} className="w-full" size="lg">
                 <ShoppingCart className="h-5 w-5 mr-2" />
@@ -171,7 +171,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onC
           </div>
         </div>
 
-        {/* Product Description */}
+        
         <Separator />
         <div>
           <h3 className="text-lg font-semibold mb-4">Descrição do Produto</h3>

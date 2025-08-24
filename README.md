@@ -22,14 +22,37 @@ npm install
 
 ## Executando a Aplicação
 
-1. Para iniciar o servidor de desenvolvimento:
+1. Para iniciar o servidor de desenvolvimento (frontend em http://localhost:3000):
 ```bash
-npx vite
+npx vite --port 3000
 ```
+
+2. Configure a URL do backend (API) via variável de ambiente antes de iniciar o Vite (padrão: http://localhost:5000):
+```bash
+export VITE_BACKEND_URL=http://localhost:5000
+npx vite --port 3000
+```
+Se preferir, defina em tempo de execução no navegador: `window.__API_BASE__ = 'http://localhost:8080'`.
+
+O Vite está configurado para proxy de `/produtos` para `VITE_BACKEND_URL` (padrão `http://localhost:5000`) durante o desenvolvimento.
 
 2. Abra seu navegador e acesse:
 ```
-http://localhost:5173
+http://localhost:3000
+```
+
+## 🌐 Acesso aos Serviços
+
+| Serviço     | URL de Acesso                               |
+| ----------- | ------------------------------------------- |
+| Frontend    | http://localhost:3000                        |
+| Backend API | http://localhost:5000/swagger/index.html     |
+| PostgreSQL  | http://localhost:5432                        |
+
+Conexão do banco (exemplo):
+
+```
+Host=db;Port=5432;Database=productsdb;Username=postgres;Password=postgres
 ```
 
 ## Scripts Disponíveis

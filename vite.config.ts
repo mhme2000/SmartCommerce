@@ -29,9 +29,17 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
+    port: 3000,
     fs: {
       strict: true,
       deny: ["**/.*"],
+    },
+    proxy: {
+      '/produtos': {
+        target: process.env.VITE_BACKEND_URL || 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
 });

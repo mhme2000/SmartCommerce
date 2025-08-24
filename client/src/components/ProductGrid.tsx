@@ -23,7 +23,7 @@ export const ProductGrid: React.FC = () => {
 
   return (
     <div id="products-section" className="flex-1">
-      {/* Results Header */}
+      
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-2xl font-bold text-slate-800">Produtos</h2>
@@ -32,7 +32,7 @@ export const ProductGrid: React.FC = () => {
           </p>
         </div>
 
-        {/* Sort Options */}
+        
         <Select value={sortBy} onValueChange={handleSortChange}>
           <SelectTrigger className="w-48">
             <SelectValue placeholder="Ordenar por" />
@@ -46,7 +46,7 @@ export const ProductGrid: React.FC = () => {
         </Select>
       </div>
 
-      {/* Product Grid */}
+      
       {products.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product) => (
@@ -63,7 +63,7 @@ export const ProductGrid: React.FC = () => {
         </div>
       )}
 
-      {/* Product Modal */}
+      
       {selectedProduct && (
         <ProductModal
           product={selectedProduct}

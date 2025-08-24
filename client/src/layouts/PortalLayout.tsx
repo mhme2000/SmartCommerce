@@ -3,7 +3,7 @@ import { getProducts } from '@/data/productData';
 import { Product } from '@/types/product';
 
 export const portalLoader = async () => {
-  const products = getProducts();
+  const products = await getProducts();
   return { products };
 };
 

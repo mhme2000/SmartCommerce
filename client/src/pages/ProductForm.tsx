@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRevalidator } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { addProduct } from '@/data/productData';
+import { createProduct } from '@/data/productData';
 import { Product } from '@/types/product';
 
 export default function ProductForm() {
@@ -26,14 +26,18 @@ export default function ProductForm() {
     }));
   };
 
-  const handleCreate = () => {
+  const handleCreate = async () => {
     if (!form.id || !form.name) {
       alert('ID e Nome são obrigatórios');
       return;
     }
-    addProduct(form);
-    revalidator.revalidate();
-    navigate('/');
+    try {
+      await createProduct(form);
+      revalidator.revalidate();
+      navigate('/');
+    } catch (e: any) {
+      alert(e?.message || 'Falha ao criar produto');
+    }
   };
 
   const handleCancel = () => {
