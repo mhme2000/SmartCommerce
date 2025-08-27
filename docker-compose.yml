@@ -1,0 +1,46 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: productsdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - backend-network
+
+  api:
+    build:
+      context: ./ProductBackend
+      dockerfile: Dockerfile
+    ports:
+      - "5150:5150"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=productsdb;Username=postgres;Password=postgres
+    networks:
+      - backend-network
+  
+  frontend:
+    build:
+     context: ./portal-produtos
+     dockerfile: Dockerfile
+    ports:
+     - "3000:80"
+    depends_on:
+     - api
+    networks:
+     - backend-network
+networks:
+  backend-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+  
